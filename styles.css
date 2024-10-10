@@ -1,0 +1,173 @@
+/* Estilos globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header global */
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;  /* Mantém o título centralizado */
+    align-items: center;
+    position: relative;
+}
+
+.menu-nav {
+    position: absolute;
+    left: 10px;
+}
+
+.menu-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.menu-nav ul li {
+    margin-right: 20px;
+}
+
+.menu-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+.menu-nav ul li a:hover {
+    color: #d1eaff;
+}
+
+header h1 {
+    font-size: 2.5em;
+    text-align: center;
+    margin: 0;
+}
+
+/* Estilos globais para footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Página Inicial - index.html */
+.welcome-section {
+    background-color: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Página de Contatos - contato.html */
+.contact-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    text-align: center;
+    display: flex;  /* Aplica flexbox para organizar os itens em caixas */
+    justify-content: space-between;  /* Distribui o espaço entre os itens */
+    align-items: center;  /* Alinha os itens verticalmente ao centro */
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+    display: flex;  /* Organiza os itens da lista em uma linha */
+    justify-content: space-between;  /* Espaça os itens uniformemente */
+    width: 100%;  /* Para garantir que ocupem o espaço horizontal */
+}
+
+.contact-list li {
+    margin: 0 10px;  /* Espaçamento entre os itens */
+    font-size: 1.2em;
+    flex: 1;  /* Permite que cada item cresça igualmente */
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-list li:hover {
+    transform: translateY(-5px);  /* Pequeno efeito de elevação ao passar o mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.contact-list li a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-list li a:hover {
+    color: #0056b3;
+}
+
+.contact-list li i {
+    margin-bottom: 10px;
+    display: block;
+    font-size: 2em;  /* Aumenta o tamanho do ícone */
+}
+
+.contact-list li .fa-facebook {
+    color: #3b5998;
+}
+
+.contact-list li .fa-instagram {
+    color: #E1306C;
+}
+
+.contact-list li .fa-tiktok {
+    color: #010101;
+}
+
+.contact-list li .fa-whatsapp {
+    color: #25d366;
+}
+
+/* Produtos - produtos.html */
+/* (Adicione os estilos específicos aqui, caso necessário) */
+
+/* Clientes - clientes.html */
+/* (Adicione os estilos específicos aqui, caso necessário) */
+
+/* Relatórios - relatorios.html */
+/* (Adicione os estilos específicos aqui, caso necessário) */
+
+/* Configurações - configuracoes.html */
+/* (Adicione os estilos específicos aqui, caso necessário) */
