@@ -18,7 +18,7 @@ header {
     color: white;
     padding: 10px 0;
     display: flex;
-    justify-content: center;  /* Mantém o título centralizado */
+    justify-content: center;
     align-items: center;
     position: relative;
 }
@@ -54,70 +54,102 @@ header h1 {
     margin: 0;
 }
 
-/* Estilos globais para footer */
+/* Estilo geral do footer */
 footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #007bff;
+    background-color: #007bff;  /* Fundo azul para o rodapé */
+    position: fixed;  /* Mantém o rodapé fixo no final da página */
+    bottom: 0;  /* Gruda o rodapé na parte inferior */
+    width: 100%;    /* Ocupa toda a largura da tela */
+    text-align: center;  /* Alinhamento centralizado */
+    color: white;  /* Texto branco */
+    height: 20px;  /* Define a altura do rodapé */
+    overflow: hidden;  /* Oculta o texto que está fora dos limites do rodapé */
+    white-space: nowrap;  /* Impede que o texto quebre em várias linhas */
+    z-index: 1000; /* Garante que o rodapé fique acima de outros elementos */
+}
+
+/* Estilo da animação de rolagem do texto */
+.scrolling-text {
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 1em;
     color: white;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+    position: absolute; /* Posição absoluta para permitir a rolagem */
+    transform: translateY(-100%); /* Centraliza verticalmente */
+    animation: scroll-text 15s linear infinite;
 }
 
-/* Página Inicial - index.html */
-/* Página Inicial - index.html */
-.welcome-section {
-    background-color: white;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: left;  /* Alinhar o texto à esquerda para melhor legibilidade */
+/* Definindo a animação de rolagem (esquerda para direita) */
+@keyframes scroll-text {
+    0% {
+        transform: translateX(100%);  /* Começa fora da tela à direita */
+    }
+    100% {
+        transform: translateX(-100%);   /* Termina fora da tela à esquerda */
+    }
 }
 
-.welcome-section h2, .welcome-section h3 {
-    color: #007bff; /* Cor do título em azul para manter a identidade do site */
-    margin-bottom: 15px;
+
+
+/* Página Inicial - index.html */
+.intro-section {
     text-align: center;
+    margin: 50px 0;
 }
 
-.welcome-section p {
-    margin-bottom: 20px;  /* Adicionar espaçamento entre os parágrafos */
-    line-height: 1.8;     /* Melhorar a legibilidade do texto */
-}
-
-.welcome-section ul {
-    margin-left: 20px;  /* Indentação das listas */
+.intro-section h2 {
+    color: #007bff;
+    font-size: 2em;
     margin-bottom: 20px;
 }
 
-.welcome-section ul li {
-    margin-bottom: 10px;  /* Espaçamento entre os itens da lista */
-    line-height: 1.6;
+.intro-section p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
 }
 
-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1em;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-top: 20px;  /* Adiciona espaço entre o conteúdo e o botão */
-    display: block;    /* Faz o botão ocupar a largura total disponível no contêiner pai */
-    margin-left: auto; /* Centraliza horizontalmente o botão */
-    margin-right: auto; /* Centraliza horizontalmente o botão */
-    width: fit-content; /* Ajusta o tamanho do botão ao conteúdo */
+.main-image {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 50px;
 }
 
-
-button:hover {
-    background-color: #0056b3;
+.features-section {
+    padding: 50px 20px;
+    background-color: #f8f9fa;
 }
 
+.features-section h2 {
+    color: #070707;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.features-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.feature-item {
+    text-align: center;
+    max-width: 300px;
+    margin-bottom: 30px;
+}
+
+.feature-item img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.feature-item h3 {
+    color: #007bff;
+    margin-bottom: 10px;
+}
 
 /* Página de Contatos - contato.html */
 .contact-section {
@@ -126,24 +158,55 @@ button:hover {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
+    text-align: left;
+}
+
+.contact-section h2 {
+    color: #007bff;
+    margin-bottom: 15px;
     text-align: center;
-    display: flex;  /* Aplica flexbox para organizar os itens em caixas */
-    justify-content: space-between;  /* Distribui o espaço entre os itens */
-    align-items: center;  /* Alinha os itens verticalmente ao centro */
+}
+
+.contact-section p, .contact-section ul {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.contact-section ul {
+    margin-bottom: 30px;
+}
+
+.contact-section ul li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.social-media-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    margin-bottom: 45px;
+    text-align: center;
 }
 
 .contact-list {
     list-style: none;
     padding: 0;
-    display: flex;  /* Organiza os itens da lista em uma linha */
-    justify-content: space-between;  /* Espaça os itens uniformemente */
-    width: 100%;  /* Para garantir que ocupem o espaço horizontal */
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .contact-list li {
-    margin: 0 10px;  /* Espaçamento entre os itens */
+    margin: 0 10px;
     font-size: 1.2em;
-    flex: 1;  /* Permite que cada item cresça igualmente */
+    flex: 1;
     background-color: #f9f9f9;
     padding: 15px;
     border-radius: 8px;
@@ -153,7 +216,7 @@ button:hover {
 }
 
 .contact-list li:hover {
-    transform: translateY(-5px);  /* Pequeno efeito de elevação ao passar o mouse */
+    transform: translateY(-5px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
@@ -170,7 +233,7 @@ button:hover {
 .contact-list li i {
     margin-bottom: 10px;
     display: block;
-    font-size: 2em;  /* Aumenta o tamanho do ícone */
+    font-size: 2em;
 }
 
 .contact-list li .fa-facebook {
@@ -189,14 +252,131 @@ button:hover {
     color: #25d366;
 }
 
-/* Produtos - produtos.html */
-/* (Adicione os estilos específicos aqui, caso necessário) */
+/* Botão global */
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+}
 
-/* Clientes - clientes.html */
-/* (Adicione os estilos específicos aqui, caso necessário) */
+button:hover {
+    background-color: #0056b3;
+}
 
-/* Relatórios - relatorios.html */
-/* (Adicione os estilos específicos aqui, caso necessário) */
+/* Página de Produtos - produtos.html */
+.content-section {
+    padding: 20px;
+    background-color: #f8f9fa;
+    display: flex;  /* Ativa o Flexbox */
+    justify-content: center;  /* Centraliza horizontalmente */
+    align-items: center;  /* Centraliza verticalmente */
+   
+    text-align: center;
+    flex-direction: column; /* Garante que o texto fique em coluna */
+}
 
-/* Configurações - configuracoes.html */
-/* (Adicione os estilos específicos aqui, caso necessário) */
+.content-section h2 {
+    color: #007bff;
+    margin-bottom: 15px;
+    margin-top: 40px;
+}
+
+.content-section p {
+    margin-bottom: 20px;
+    max-width: 800px;  /* Limita a largura do parágrafo para melhor legibilidade */
+}
+
+
+/* Barra de Navegação de Categorias */
+.product-categories {
+    margin-top: 40px;
+}
+
+.product-categories ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;  /* Reduz a margem entre os itens para 10px */
+    flex-wrap: wrap;
+}
+
+.product-categories ul li {
+    margin: 0;  /* Remove a margem horizontal existente */
+}
+
+.product-categories ul li a {
+    background-color: #f8f9fa;
+    color: #333;
+    padding: 15px 105px;  /* Aumenta o espaço dentro dos botões */
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.product-categories ul li a:hover {
+    background-color: #007bff;
+    color: white;
+    transform: translateY(-5px);
+}
+
+
+/* --------- Media Queries (Responsividade) --------- */
+
+/* Para telas médias e grandes */
+@media (min-width: 768px) {
+    .features-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .feature-item {
+        flex-basis: 30%;
+    }
+    
+    .product-categories ul {
+        justify-content: space-between;
+    }
+}
+
+/* Para telas pequenas (smartphones) */
+@media (max-width: 767px) {
+    .menu-nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .features-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-item {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .product-categories ul li {
+        width: 100%;
+    }
+
+    .content-section {
+        padding: 10px;
+    }
+
+    .main-image {
+        width: 100%;
+    }
+}
