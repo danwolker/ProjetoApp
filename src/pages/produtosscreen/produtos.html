@@ -1,17 +1,55 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produtos</title>
     <link rel="stylesheet" href="../../../assets/components/styles.css">
+    <script>
+        /**
+         * Carrega um formulário dinamicamente com base na categoria escolhida
+         * 
+         * @param {String} categoria - A categoria do formulário que será carregado
+         */
+        function carregarFormulario(categoria) {
+            const url = `../produtosscreen/${categoria}.html`;
+
+            // Log para acompanhar o carregamento
+            console.log(`Tentando carregar formulário de ${categoria}:`, url);
+
+            // Fetch para carregar o formulário
+            fetch(url)
+                .then(response => {
+                    // Verifica se a resposta é OK
+                    if (!response.ok) {
+                        throw new Error(`Erro ao carregar o formulário: ${response.status}`);
+                    }
+
+                    // Retorna o conteúdo em texto
+                    return response.text();
+                })
+                .then(data => {
+                    // Log após o carregamento bem-sucedido
+                    console.log(`Formulário de ${categoria} carregado com sucesso.`);
+
+                    // Atualiza o conteúdo dinâmico no DOM
+                    document.getElementById('conteudoDinamico').innerHTML = data;
+
+                    // Log para acompanhar a inser o do conte do no DOM
+                    console.log('Conte do din mico inserido no DOM.');
+                })
+                .catch(error => console.error(`Erro ao carregar o formul rio de ${categoria}:`, error));
+        }
+    </script>
 </head>
+
 <body>
     <header>
         <nav class="menu-nav">
             <ul>
                 <li><a href="../homescreen/index.html">Início</a></li>
-                <li><a href="../produtosscreen/produtos.html">Produtos</a></li>    
+                <li><a href="../produtosscreen/produtos.html">Produtos</a></li>
                 <li><a href="../estoquescreen/estoque.html">Estoque</a></li>
                 <li><a href="../relatorioscreen/relatorios.html">Relatórios</a></li>
                 <li><a href="../configuracoesscreen/configuracoes.html">Configurações</a></li>
@@ -19,28 +57,37 @@
         </nav>
         <h1>Produtos</h1>
     </header>
-    
+
     <main>
         <section class="content-section">
             <h2>Gerenciamento de Produtos</h2>
-            <p>Gerencie seus <strong>produtos</strong> com facilidade! <strong>aqui</strong>, você pode <strong>adicionar</strong>, <strong>editar</strong> e <strong>remover</strong> itens de forma rápida e intuitiva.
-               Aproveite as funcionalidades <strong>otimizadas</strong> para garantir que o controle do seu estoque seja eficiente e <strong>prático</strong>. Comece 
-               agora e descubra como é simples manter tudo <strong>organizado</strong>!".</p>
+            <p>Gerencie seus <strong>produtos</strong> com facilidade! <strong>aqui</strong>, você pode <strong>adicionar</strong>, <strong>editar</strong> e
+                <strong>remover</strong> itens de forma rápida e intuitiva. Aproveite as funcionalidades <strong>otimizadas</strong> para garantir que o controle do
+                seu estoque seja eficiente e <strong>prático</strong>. Comece agora e descubra como é simples manter tudo <strong>organizado</strong>!</p>
 
             <nav class="product-categories">
                 <ul>
-                    <li><a href="#">Insumos</a></li>
-                    <li><a href="#">Bebidas</a></li>
-                    <li><a href="#">Limpeza</a></li>
-                    <li><a href="#">Delivery</a></li>
-                    <li><a href="#">Caixa e Material Administrativo</a></li>
+                    <li><a href="#" onclick="carregarFormulario('Insumos')">Insumos</a></li>
+                    <li><a href="#" onclick="carregarFormulario('bebidas')">Bebidas</a></li>
+                    <li><a href="#" onclick="carregarFormulario('limpeza')">Limpeza</a></li>
+                    <li><a href="#" onclick="carregarFormulario('delivery')">Delivery</a></li>
+                    <li><a href="#" onclick="carregarFormulario('caixa')">Caixa e Material Administrativo</a></li>
                 </ul>
             </nav>
+        </section>
+
+        <!-- Conteúdo dinâmico será carregado aqui -->
+        <section id="conteudoDinamico" class="dynamic-content-section">
+            <p>Selecione uma categoria acima para gerenciar seus produtos.</p>
         </section>
     </main>
 
     <footer>
         <div class="scrolling-text">AppVendedor © 2024</div>
     </footer>
+
+    <!-- Certifique-se de que o caminho está correto -->
+    <script src="../../../src/scripts/script.js"></script>
 </body>
+
 </html>

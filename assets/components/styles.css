@@ -252,7 +252,7 @@ footer {
     color: #25d366;
 }
 
-/* Botão global */
+/* Botão global  ex; botoes pagina de produto */ 
 button {
     background-color: #007bff;
     color: white;
@@ -331,6 +331,110 @@ button:hover {
     color: white;
     transform: translateY(-5px);
 }
+
+/* Formulários */
+.form-section {
+    padding: 20px;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    width: 100%; /* Ocupa toda a largura da tela */
+    margin: 0;  /* Remove a margem para estender até as bordas */
+    border-radius: 0;  /* Remove o arredondamento, caso deseje bordas retas */
+    box-shadow: none; /* Remove a sombra para um layout mais "flat" */
+}
+
+.form-section h2 {
+    color: #007bff;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+fieldset {
+    border: none;
+    margin-bottom: 20px;
+    padding: 0;
+    width: 100%; /* Ocupa toda a largura dentro do form */
+}
+
+legend {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #f8f9fa;
+    width: 100%;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease-in-out;
+    margin-bottom: 15px;
+}
+
+input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 100%; /* Os botões também ocupam toda a largura */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 48%; /* Ajuste opcional para os botões ocuparem metade da largura */
+}
+
+.btn-save {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-save:hover {
+    background-color: #218838;
+}
+
+.btn-edit {
+    background-color: #ffc107;
+    color: white;
+}
+
+.btn-edit:hover {
+    background-color: #e0a800;
+}
+
+/* Seção de conteúdo dinâmico */
+.dynamic-content-section {
+    padding: 40px;
+    text-align: left;
+    width: 100%;  /* O conteúdo dinâmico também ocupa toda a largura */
+}
+
+
 
 
 /* --------- Media Queries (Responsividade) --------- */
